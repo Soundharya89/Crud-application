@@ -21,37 +21,37 @@ public class UserController {
     }
 
     //create user RESTAPI
-    @PostMapping("/")
+    @PostMapping("/adduser")
     public ResponseEntity<User> saveUser(@RequestBody User user)
     {
         return new ResponseEntity<User>(userService.saveUser(user), HttpStatus.CREATED);
     }
 
     //get all user REST API
-    @GetMapping
+    @GetMapping("/get-all-user")
     public List<User>getAllUser(){
         return userService.getAllUser();
     }
 
-    //get user by id REST API
-    @GetMapping("{id}")
-    public ResponseEntity<User> getUserById(@PathVariable("id") long empId){
-        return new ResponseEntity<User>(userService.getUserById(empId),HttpStatus.OK);
-
-    }
-
-    //update user REST API
-    @PutMapping("{id}")
-    public ResponseEntity<User> updateUser(@PathVariable("id") long id, @RequestBody User user){
-        return new ResponseEntity<User>(userService.updateUser(user,id),HttpStatus.OK);
-    }
-
-    //delete user RESTAPI
-    @DeleteMapping("{id}")
-    public ResponseEntity<String> deleteUser(@PathVariable("id") long id){
-
-        userService.deleteUser(id);
-        return  new ResponseEntity<String>("User deleted successfully",HttpStatus.OK);
-    }
+//    //get user by id REST API
+//    @GetMapping("{id}")
+//    public ResponseEntity<User> getUserById(@PathVariable("id") long empId){
+//        return new ResponseEntity<User>(userService.getUserById(empId),HttpStatus.OK);
+//
+//    }
+//
+//    //update user REST API
+//    @PutMapping("{id}")
+//    public ResponseEntity<User> updateUser(@PathVariable("id") long id, @RequestBody User user){
+//        return new ResponseEntity<User>(userService.updateUser(user,id),HttpStatus.OK);
+//    }
+//
+//    //delete user RESTAPI
+//    @DeleteMapping("{id}")
+//    public ResponseEntity<String> deleteUser(@PathVariable("id") long id){
+//
+//        userService.deleteUser(id);
+//        return  new ResponseEntity<String>("User deleted successfully",HttpStatus.OK);
+//    }
 }
 
