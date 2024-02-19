@@ -33,13 +33,13 @@ public class UserController {
         return userService.getAllUser();
     }
 
-//    //get user by id REST API
-//    @GetMapping("{id}")
-//    public ResponseEntity<User> getUserById(@PathVariable("id") long empId){
-//        return new ResponseEntity<User>(userService.getUserById(empId),HttpStatus.OK);
-//
-//    }
-//
+    //get user by id REST API
+    @GetMapping("{id}")
+    public ResponseEntity<User> getUserById(@PathVariable("id") long empId){
+        return new ResponseEntity<User>(userService.getUserById(empId),HttpStatus.OK);
+
+    }
+
 //    //update user REST API
 //    @PutMapping("{id}")
 //    public ResponseEntity<User> updateUser(@PathVariable("id") long id, @RequestBody User user){
